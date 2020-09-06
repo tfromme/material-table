@@ -66,7 +66,10 @@ export default class MTableBodyRow extends React.Component {
               }
               rowData={this.props.data}
               cellEditable={
-                columnDef.editable !== "never" && !!this.props.cellEditable
+                columnDef.editable !== "never"
+                  && (this.props.cellEditable
+                      ? this.props.cellEditable.isCellEditable ? this.props.cellEditable.isCellEditable(this.props.data) : false
+                      : false)
               }
               onCellEditStarted={this.props.onCellEditStarted}
               scrollWidth={this.props.scrollWidth}
