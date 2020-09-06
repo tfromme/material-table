@@ -68,7 +68,7 @@ export default class MTableBodyRow extends React.Component {
               cellEditable={
                 columnDef.editable !== "never"
                   && (this.props.cellEditable
-                      ? this.props.cellEditable.isCellEditable ? this.props.cellEditable.isCellEditable(this.props.data) : false
+                      ? this.props.cellEditable.isCellEditable ? this.props.cellEditable.isCellEditable(this.props.data) : true
                       : false)
               }
               onCellEditStarted={this.props.onCellEditStarted}
